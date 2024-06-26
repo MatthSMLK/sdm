@@ -1,0 +1,11 @@
+C:\apagar\sdm\backend-cripto\src\main\java\br\unibh\sdm\backend_cripto\entidades\Criptomoeda.java
+C:\apagar\sdm\backend-cripto\src\main\java\br\unibh\sdm\backend_cripto\rest\CriptomoedaController.java
+C:\apagar\sdm\backend-cripto\src\main\java\br\unibh\sdm\backend_cripto\entidades\Moeda.java
+C:\apagar\sdm\backend-cripto\src\main\java\br\unibh\sdm\backend_cripto\negocio\CriptomoedaService.java
+C:\apagar\sdm\backend-cripto\src\main\java\br\unibh\sdm\backend_cripto\persistencia\CotacaoRepository.java
+C:\apagar\sdm\backend-cripto\src\main\java\br\unibh\sdm\backend_cripto\persistencia\DynamoDBConfig.java
+C:\apagar\sdm\backend-cripto\src\main\java\br\unibh\sdm\backend_cripto\persistencia\CriptomoedaRepository.java
+C:\apagar\sdm\backend-cripto\src\main\java\br\unibh\sdm\backend_cripto\entidades\Cotacao.java
+C:\apagar\sdm\backend-cripto\src\main\java\br\unibh\sdm\backend_cripto\Application.java
+C:\apagar\sdm\backend-cripto\src\main\java\br\unibh\sdm\backend_cripto\negocio\CotacaoService.java
+C:\apagar\sdm\backend-cripto\src\main\java\br\unibh\sdm\backend_cripto\rest\CotacaoController.java
