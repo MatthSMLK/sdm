@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 
 import br.unibh.sdm.backend_estacionamento.entidades.VagaEstacionamento;
 import br.unibh.sdm.backend_estacionamento.persistencia.VagaRepository;
-
+ 
 /**
  * Classe contendo a lógica de negócio para VagaEstacionamento
  */
