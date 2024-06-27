@@ -1,6 +1,7 @@
 package br.unibh.sdm.backend_estacionamento.persistencia;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.socialsignin.spring.data.dynamodb.repository.EnableScan;
 import org.springframework.data.repository.CrudRepository;
@@ -13,7 +14,7 @@ import br.unibh.sdm.backend_estacionamento.entidades.Estacionamento;
  *
  */
 @EnableScan()
-public interface EstacionamentoRepository extends CrudRepository<Estacionamento, String> {
+public interface EstacionamentoRepository extends CrudRepository<Estacionamento, UUID> {
 	
 	List<Estacionamento> findByNome(String nome);
 	

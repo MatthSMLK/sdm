@@ -1,6 +1,7 @@
 package br.unibh.sdm.backend_estacionamento.entidades;
 
 import java.util.Date;
+import java.util.UUID;
 
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAttribute;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;
