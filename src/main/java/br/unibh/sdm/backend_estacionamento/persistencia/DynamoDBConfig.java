@@ -22,7 +22,6 @@ import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
  * <br>
  * amazon.aws.accesskey=<br>
  * amazon.aws.secretkey=<br>
- * @author jhcru
  *
  */
 @Configuration
