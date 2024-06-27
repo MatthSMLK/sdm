@@ -1,7 +1,8 @@
 package br.unibh.sdm.backend_estacionamento.rest;
 
+import br.unibh.sdm.backend_estacionamento.negocio.ReservaEstacionamentoService;
 import java.util.List;
-
+import br.unibh.sdm.backend_estacionamento.entidades.ReservaEstacionamento;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.util.ObjectUtils;
@@ -15,8 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.unibh.sdm.backend_estacionamento.entidades.ReservaEstacionamento;
-import br.unibh.sdm.backend_estacionamento.negocio.ReservaEstacionamentoService;
+
 import jakarta.validation.constraints.NotNull;
 
 /**
@@ -33,12 +33,12 @@ public class ReservaEstacionamentoController {
     }
 
     @GetMapping(value = "")
-    public List<ReservaEstacionamento> getReservas(){
+    public List<ReservaEstacionamentoService> getReservas(){
         return reservaEstacionamentoService.getReservas();
     }
     
     @GetMapping(value="{id}")
-    public ReservaEstacionamento getReservaById(@PathVariable String id) throws Exception{
+    public ReservaEstacionamentoService getReservaById(@PathVariable String id) throws Exception{
         if(!ObjectUtils.isEmpty(id)){
            return reservaEstacionamentoService.getReservaById(id);
         }

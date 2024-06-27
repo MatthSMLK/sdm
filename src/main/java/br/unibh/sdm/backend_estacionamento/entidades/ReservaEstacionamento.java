@@ -1,13 +1,13 @@
 package br.unibh.sdm.backend_estacionamento.entidades;
 
-public enum EstadoVaga {
+public enum ReservaEstacionamento {
 
 	DISPONIVEL("Disponível"), 
 	OCUPADA("Ocupada");
 
 	private String descricao;
 
-	EstadoVaga(String descricao) {
+	ReservaEstacionamento(String descricao) {
 		this.descricao = descricao;
 	}
 

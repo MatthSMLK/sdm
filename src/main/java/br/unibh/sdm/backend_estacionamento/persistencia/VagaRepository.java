@@ -5,7 +5,7 @@ import java.util.List;
 import org.socialsignin.spring.data.dynamodb.repository.EnableScan;
 import org.springframework.data.repository.CrudRepository;
 
-import br.unibh.sdm.backend_estacionamento.entidades.Vaga;
+import br.unibh.sdm.backend_estacionamento.entidades.VagaEstacionamento;
 
 /**
  * Esta classe estende o padrão CrudRepository 
@@ -13,8 +13,8 @@ import br.unibh.sdm.backend_estacionamento.entidades.Vaga;
  *
  */
 @EnableScan()
-public interface VagaRepository extends CrudRepository<Vaga, String> {
+public interface VagaRepository extends CrudRepository<VagaEstacionamento, String> {
 	
-	List<Vaga> findByCodigo(String codigo);
+	List<VagaEstacionamento> findByCodigo(String codigo);
 	
 }

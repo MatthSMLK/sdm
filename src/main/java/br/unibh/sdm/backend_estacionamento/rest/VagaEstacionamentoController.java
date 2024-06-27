@@ -54,7 +54,7 @@ public class VagaEstacionamentoController {
     @PutMapping(value = "{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
     public VagaEstacionamento updateVaga(@PathVariable String id, 
     		@RequestBody @NotNull VagaEstacionamento vagaEstacionamento) throws Exception {
-    	if (!id.equals(vagaEstacionamento.getCodigo())) {
+    	if (!id.equals(vagaEstacionamento.getId())) {
     		throw new Exception("Código "+id+" não está correto");
     	}
     	if (!vagaEstacionamentoService.isVagaExists(vagaEstacionamento)) {

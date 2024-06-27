@@ -1,7 +1,6 @@
 package br.unibh.sdm.backend_estacionamento.negocio;
 
 import java.lang.invoke.MethodHandles;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -11,7 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import br.unibh.sdm.backend_estacionamento.entidades.VagaEstacionamento;
-import br.unibh.sdm.backend_estacionamento.persistencia.VagaEstacionamentoRepository;
+import br.unibh.sdm.backend_estacionamento.persistencia.VagaRepository;
 
 /**
  * Classe contendo a lógica de negócio para VagaEstacionamento
@@ -21,9 +20,9 @@ public class VagaEstacionamentoService {
 
     private static final Logger logger= LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
     
-    private final VagaEstacionamentoRepository vagaEstacionamentoRepo;
+    private final VagaRepository vagaEstacionamentoRepo;
 
-    public VagaEstacionamentoService(VagaEstacionamentoRepository vagaEstacionamentoRepository){
+    public VagaEstacionamentoService(VagaRepository vagaEstacionamentoRepository){
         this.vagaEstacionamentoRepo = vagaEstacionamentoRepository;
     }
     
@@ -32,9 +31,6 @@ public class VagaEstacionamentoService {
             logger.info("Buscando todas as vagas");
         }
         Iterable<VagaEstacionamento> lista = this.vagaEstacionamentoRepo.findAll();
-        if (lista == null) {
-        	return new ArrayList<VagaEstacionamento>();
-        }
         return IteratorUtils.toList(lista.iterator());
     }
 
@@ -64,7 +60,7 @@ public class VagaEstacionamentoService {
     }
 
     public boolean isVagaExists(VagaEstacionamento vagaEstacionamento){
-    	Optional<VagaEstacionamento> retorno = this.vagaEstacionamentoRepo.findById(vagaEstacionamento.getCodigo());
+    	Optional<VagaEstacionamento> retorno = this.vagaEstacionamentoRepo.findById(vagaEstacionamento.getId());
         return retorno.isPresent();
     }
 
