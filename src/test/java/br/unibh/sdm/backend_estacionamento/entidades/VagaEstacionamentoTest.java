@@ -2,12 +2,43 @@ package br.unibh.sdm.backend_estacionamento.entidades;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+
+import com.amazonaws.client.builder.AwsClientBuilder;
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 
 import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@ExtendWith(SpringExtension.class)
+@SpringBootTest(classes = {PropertyPlaceholderAutoConfiguration.class, VagaEstacionamentoTest.DynamoDBConfig.class})
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class VagaEstacionamentoTest {
+
+    @Configuration
+    static class DynamoDBConfig {
+        @Bean
+        public AmazonDynamoDB amazonDynamoDB() {
+            return AmazonDynamoDBClientBuilder.standard()
+                .withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration("http://localhost:8000", "us-west-2"))
+                .build();
+        }
+
+        @Bean
+        public DynamoDBMapper dynamoDBMapper() {
+            return new DynamoDBMapper(amazonDynamoDB());
+        }
+    }
+
     private VagaEstacionamento vagaEstacionamento;
     private Date dataAtual;
 

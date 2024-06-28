@@ -1,0 +1,11 @@
+br\unibh\sdm\backend_estacionamento\persistencia\DynamoDBConfig.class
+br\unibh\sdm\backend_estacionamento\entidades\VagaEstacionamento.class
+br\unibh\sdm\backend_estacionamento\entidades\Estacionamento.class
+br\unibh\sdm\backend_estacionamento\persistencia\VagaRepository.class
+br\unibh\sdm\backend_estacionamento\persistencia\EstacionamentoRepository.class
+br\unibh\sdm\backend_estacionamento\entidades\ReservaEstacionamento.class
+br\unibh\sdm\backend_estacionamento\Application.class
+br\unibh\sdm\backend_estacionamento\negocio\EstacionamentoService.class
+br\unibh\sdm\backend_estacionamento\negocio\VagaEstacionamentoService.class
+br\unibh\sdm\backend_estacionamento\rest\VagaEstacionamentoController.class
+br\unibh\sdm\backend_estacionamento\rest\EstacionamentoController.class

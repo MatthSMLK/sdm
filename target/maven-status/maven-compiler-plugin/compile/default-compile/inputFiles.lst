@@ -1,0 +1,11 @@
+C:\Users\mathe\sdm\backend-estacionamento\src\main\java\br\unibh\sdm\backend_estacionamento\Application.java
+C:\Users\mathe\sdm\backend-estacionamento\src\main\java\br\unibh\sdm\backend_estacionamento\negocio\EstacionamentoService.java
+C:\Users\mathe\sdm\backend-estacionamento\src\main\java\br\unibh\sdm\backend_estacionamento\persistencia\EstacionamentoRepository.java
+C:\Users\mathe\sdm\backend-estacionamento\src\main\java\br\unibh\sdm\backend_estacionamento\negocio\VagaEstacionamentoService.java
+C:\Users\mathe\sdm\backend-estacionamento\src\main\java\br\unibh\sdm\backend_estacionamento\rest\VagaEstacionamentoController.java
+C:\Users\mathe\sdm\backend-estacionamento\src\main\java\br\unibh\sdm\backend_estacionamento\entidades\VagaEstacionamento.java
+C:\Users\mathe\sdm\backend-estacionamento\src\main\java\br\unibh\sdm\backend_estacionamento\persistencia\DynamoDBConfig.java
+C:\Users\mathe\sdm\backend-estacionamento\src\main\java\br\unibh\sdm\backend_estacionamento\entidades\Estacionamento.java
+C:\Users\mathe\sdm\backend-estacionamento\src\main\java\br\unibh\sdm\backend_estacionamento\entidades\ReservaEstacionamento.java
+C:\Users\mathe\sdm\backend-estacionamento\src\main\java\br\unibh\sdm\backend_estacionamento\persistencia\VagaRepository.java
+C:\Users\mathe\sdm\backend-estacionamento\src\main\java\br\unibh\sdm\backend_estacionamento\rest\EstacionamentoController.java
