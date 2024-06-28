@@ -1,52 +1,40 @@
 package br.unibh.sdm.backend_estacionamento.persistencia;
 
 import org.socialsignin.spring.data.dynamodb.repository.config.EnableDynamoDBRepositories;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
+import org.springframework.beans.factory.annotation.Value;
 
-import com.amazonaws.auth.AWSCredentials;
-import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.AWSStaticCredentialsProvider;
 import com.amazonaws.auth.BasicAWSCredentials;
-import com.amazonaws.regions.Regions;
+import com.amazonaws.client.builder.AwsClientBuilder.EndpointConfiguration;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
 
-/**
- * Configurações para acessar o AWS DynamoDB
- *  <br>
- * Para rodar, antes sete a seguinte variável de ambiente: -Dspring.config.location=C:/Users/jhcru/sdm/
- *  <br>
- * Neste diretório, criar um arquivo application.properties contendo as seguintes variáveis:
- * <br>
- * amazon.aws.accesskey=<br>
- * amazon.aws.secretkey=<br>
- *
- */
 @Configuration
-@EnableDynamoDBRepositories(basePackages = "br.unibh.sdm.backend_estacionamento.persistencia")
+@EnableDynamoDBRepositories(basePackages = "br.unibh.sdm.backend_estacionamento.repository")
 public class DynamoDBConfig {
 
-	@Value("${amazon.aws.accesskey}")
-	private String amazonAWSAccessKey;
+    @Value("${aws.dynamodb.endpoint}")
+    private String dynamodbEndpoint;
 
-	@Value("${amazon.aws.secretkey}")
-	private String amazonAWSSecretKey;
+    @Value("${aws.accessKeyId}")
+    private String accessKey;
 
-	public AWSCredentialsProvider amazonAWSCredentialsProvider() {
-		return new AWSStaticCredentialsProvider(amazonAWSCredentials());
-	}
+    @Value("${aws.secretKey}")
+    private String secretKey;
 
-	@Bean
-	public AWSCredentials amazonAWSCredentials() {
-		return new BasicAWSCredentials(amazonAWSAccessKey, amazonAWSSecretKey);
-	}
+    @Value("${aws.region}")
+    private String region;
 
-	@Bean
-	public AmazonDynamoDB amazonDynamoDB() {
-		return AmazonDynamoDBClientBuilder.standard().withCredentials(amazonAWSCredentialsProvider())
-				.withRegion(Regions.US_EAST_1).build();
-	}
-
+    @Bean
+    @Primary
+    public AmazonDynamoDB amazonDynamoDB() {
+        return AmazonDynamoDBClientBuilder.standard()
+            .withEndpointConfiguration(new EndpointConfiguration(dynamodbEndpoint, region))
+            .withCredentials(new AWSStaticCredentialsProvider(new BasicAWSCredentials(accessKey, secretKey)))
+            .build();
+    }
 }
+
