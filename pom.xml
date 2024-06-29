@@ -6,9 +6,9 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>br.unibh.sdm</groupId>
-  <artifactId>backend-cripto</artifactId>
+  <artifactId>backend-estacionamento</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <name>backend-cripto</name>
+  <name>backend-estacionamento</name>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
