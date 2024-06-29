@@ -1,5 +1,6 @@
 br\unibh\sdm\backend_estacionamento\persistencia\DynamoDBConfig.class
 br\unibh\sdm\backend_estacionamento\entidades\VagaEstacionamento.class
+br\unibh\sdm\backend_estacionamento\rest\TestController.class
 br\unibh\sdm\backend_estacionamento\entidades\Estacionamento.class
 br\unibh\sdm\backend_estacionamento\persistencia\VagaRepository.class
 br\unibh\sdm\backend_estacionamento\persistencia\EstacionamentoRepository.class
